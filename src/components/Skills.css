@@ -1,0 +1,233 @@
+.skills-section {
+    position: relative;
+    z-index: 10;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.skills-video-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.skills-blackhole-video {
+    position: absolute;
+    top: -340px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(180deg);
+    opacity: 0.6;
+}
+
+.skills-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.skills-label {
+    font-size: 0.85rem;
+    color: rgba(168, 85, 247, 0.8);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.skills-heading1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 50%, #a855f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 700px;
+    line-height: 1.25;
+}
+
+.skills-heading2 {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.skills-script {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    display: inline-block;
+}
+
+/* Track container */
+.skills-track-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+
+.skills-row-wrap {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.skills-track {
+    display: flex;
+    gap: 1rem;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: max-content;
+}
+
+.skills-track--left {
+    animation-name: scroll-left;
+    animation-duration: calc(var(--count, 10) * 3s);
+}
+
+.skills-track--right {
+    animation-name: scroll-right;
+    animation-duration: calc(var(--count, 10) * 3s);
+}
+
+.skills-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Skill card */
+.skill-card {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+.skill-card:hover,
+.skill-card.active {
+    background: color-mix(in srgb, var(--sc, #a855f7) 18%, transparent);
+    border-color: var(--sc, #a855f7);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--sc, #a855f7) 30%, transparent);
+}
+
+.skill-card-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.skill-card-svg {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-card-name {
+    font-size: 0.85rem;
+}
+
+/* Detail panel */
+.skills-detail-panel {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(26, 0, 53, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+    max-width: 620px;
+    width: 100%;
+    backdrop-filter: blur(16px);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+    min-height: 88px;
+}
+
+.skills-detail-panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.skills-detail-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.skills-detail-panel h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.skills-detail-panel p {
+    font-size: 0.85rem;
+    color: rgba(148, 163, 184, 0.9);
+    line-height: 1.6;
+}
+
+.skills-detail-close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: rgba(168, 85, 247, 0.7);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+    align-self: flex-start;
+}
+
+.skills-detail-close:hover {
+    color: #a855f7;
+}

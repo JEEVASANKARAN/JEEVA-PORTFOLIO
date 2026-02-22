@@ -1,0 +1,36 @@
+.pxl-card {
+    background-color: #1a0035;
+    border-radius: 18px;
+    border: 1.5px solid rgba(168, 85, 247, 0.4);
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.05);
+    cursor: pointer;
+}
+
+.pxl-default,
+.pxl-active,
+.pxl-grid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pxl-active {
+    z-index: 2;
+    display: none;
+}
+
+.pxl-grid {
+    pointer-events: none;
+    z-index: 3;
+}
+
+.pxl-pixel {
+    display: none;
+    position: absolute;
+}
