@@ -171,6 +171,26 @@
     font-size: 0.85rem;
 }
 
+/* Core tech highlighting — Java, Spring Boot, Hibernate, PostgreSQL */
+.skill-card.core {
+    border-color: rgba(var(--sc-rgb, 168, 85, 247), 0.45);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--sc, #a855f7) 15%, transparent);
+}
+
+.skill-core-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--sc, #a855f7) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sc, #a855f7) 50%, transparent);
+    color: color-mix(in srgb, var(--sc, #a855f7) 95%, white);
+    margin-left: 0.1rem;
+}
+
 /* Detail panel */
 .skills-detail-panel {
     display: flex;

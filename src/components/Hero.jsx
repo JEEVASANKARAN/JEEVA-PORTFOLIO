@@ -132,6 +132,9 @@ export default function Hero() {
 
           {/* About paragraph */}
           <FadeContent blur duration={1100} delay={800}>
+            <p className="hero-value-prop">
+              Backend-focused engineer building scalable, secure, production-ready systems.
+            </p>
             <p className="hero-about">
               I'm a Full Stack Software Engineer with strong expertise in Java, Spring Boot,
               Hibernate, and PostgreSQL, complemented by modern frontend development using React.

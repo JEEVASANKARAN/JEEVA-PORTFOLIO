@@ -68,8 +68,16 @@ const SOCIAL_LINKS = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState('#home');
+  const [scrolled, setScrolled] = useState(false);
   const lineRef = useRef(null);
   const mobileMenuRef = useRef(null);
+
+  // Track scroll for navbar glass effect
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Track active section on scroll
   useEffect(() => {
@@ -119,7 +127,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
         {/* Left: Name */}
         <a href="#home" className="navbar-name" onClick={(e) => handleNavClick(e, '#home')}>
           JEEVASANKARAN S

@@ -107,6 +107,27 @@
     line-height: 1.3;
 }
 
+.project-impact {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--pc, #a855f7) 90%, white);
+    line-height: 1.5;
+    padding: 0.4rem 0.75rem;
+    background: color-mix(in srgb, var(--pc, #a855f7) 8%, transparent);
+    border-left: 2px solid var(--pc, #a855f7);
+    border-radius: 0 6px 6px 0;
+}
+
+.project-impact-icon {
+    font-size: 0.65rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
 .project-desc {
     font-size: 0.875rem;
     line-height: 1.75;

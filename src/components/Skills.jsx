@@ -4,14 +4,14 @@ import FadeContent from './FadeContent';
 import ShinyText from './ShinyText';
 
 const SKILLS = [
-  { name: 'Java', desc: 'Primary backend language — OOP, design patterns, and enterprise-grade development.', color: '#f89820', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-  { name: 'Spring Boot', desc: 'Building production-ready REST APIs, microservices, and secure server-side applications.', color: '#6db33f', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+  { name: 'Java', desc: 'Primary backend language — OOP, design patterns, and enterprise-grade development.', color: '#f89820', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', core: true },
+  { name: 'Spring Boot', desc: 'Building production-ready REST APIs, microservices, and secure server-side applications.', color: '#6db33f', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', core: true },
   { name: 'React', desc: 'Modern component-based UIs with hooks, context, and smooth user experiences.', color: '#61dafb', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'JavaScript', desc: 'ES6+, async/await, DOM manipulation, and full-stack JS development.', color: '#f7df1e', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
   { name: 'Python', desc: 'Scripting, data processing, ML model integration, and automation tasks.', color: '#3776ab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-  { name: 'PostgreSQL', desc: 'Complex SQL queries, indexing strategies, and relational data modeling.', color: '#336791', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'PostgreSQL', desc: 'Complex SQL queries, indexing strategies, and relational data modeling.', color: '#336791', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', core: true },
   { name: 'MySQL', desc: 'Relational database management, stored procedures, and performance optimization.', color: '#00758f', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-  { name: 'Hibernate', desc: 'ORM mapping, JPA, lazy/eager loading, and database abstraction layers.', color: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-plain.svg' },
+  { name: 'Hibernate', desc: 'ORM mapping, JPA, lazy/eager loading, and database abstraction layers.', color: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-plain.svg', core: true },
   { name: 'Docker', desc: 'Containerization, multi-stage builds, docker-compose, and image optimization.', color: '#2496ed', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
   { name: 'Kubernetes', desc: 'Orchestrating containerized workloads, deployments, services, and configs.', color: '#326ce5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
   { name: 'AWS', desc: 'EC2, S3, RDS, Lambda — cloud infrastructure for scalable deployments.', color: '#ff9900', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
@@ -112,7 +112,7 @@ export default function Skills() {
 function SkillCard({ skill, isActive, onClick }) {
   return (
     <button
-      className={`skill-card${isActive ? ' active' : ''}`}
+      className={`skill-card${isActive ? ' active' : ''}${skill.core ? ' core' : ''}`}
       style={{ '--sc': skill.color }}
       onClick={onClick}
       title={skill.name}
@@ -122,6 +122,7 @@ function SkillCard({ skill, isActive, onClick }) {
         : <img src={skill.icon} alt={skill.name} className="skill-card-icon" loading="lazy" />
       }
       <span className="skill-card-name">{skill.name}</span>
+      {skill.core && <span className="skill-core-badge">Core</span>}
     </button>
   );
 }

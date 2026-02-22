@@ -184,11 +184,11 @@
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: 0.05em;
-    background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 40%, #a855f7 80%, #7c3aed 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0e6ff 40%, #c084fc 80%, #9333ea 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
+    filter: drop-shadow(0 0 24px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
 }
 
 .hero-role {
@@ -208,11 +208,22 @@
     font-style: italic;
 }
 
+.hero-value-prop {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(196, 181, 253, 0.95);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+}
+
 .hero-about {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: rgba(148, 163, 184, 0.9);
+    color: rgba(203, 213, 225, 0.92);
     max-width: 600px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .hero-tech-mini {

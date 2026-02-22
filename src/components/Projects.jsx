@@ -8,6 +8,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Task Manager App in React',
+    impact: 'Implemented real-time state sync with localStorage persistence — zero data loss on refresh.',
     desc: 'Built a modern, interactive task manager application using React. Includes dynamic task management features — creating, updating, marking as completed, and deleting tasks — all maintained in browser local storage. Demonstrates proficiency in React hooks, state management, and creating a responsive and user-friendly UI.',
     tags: ['React', 'JavaScript', 'LocalStorage', 'Hooks', 'CSS'],
     color: '#a855f7',
@@ -16,6 +17,7 @@ const PROJECTS = [
   {
     id: 2,
     title: 'Student Management System',
+    impact: 'Designed modular JDBC architecture with full exception handling and transactional integrity.',
     desc: 'Developed a Java-based CRUD application that connects to an Oracle database, enabling complete management of student records. Uses JDBC to facilitate operations such as adding, updating, searching, deleting, and listing student data. Showcases SQL integration, exception handling, and proper use of JDBC to ensure robust database operations.',
     tags: ['Java', 'JDBC', 'Oracle SQL', 'OOP', 'CRUD'],
     color: '#f89820',
@@ -24,6 +26,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Library Management System',
+    impact: 'Applied OOP encapsulation and class hierarchy to manage 7 independent operations cleanly.',
     desc: 'Created a Java-based library management application to handle book borrowing and returns. Manages book inventory, tracks borrowers, and calculates fines for overdue books using OOP principles. The intuitive console interface allows for adding, issuing, returning, searching, and listing books — demonstrating encapsulation, class hierarchy, and logic to manage library operations efficiently.',
     tags: ['Java', 'OOP', 'File I/O', 'Console App', 'Encapsulation'],
     color: '#22d3ee',
@@ -32,6 +35,7 @@ const PROJECTS = [
   {
     id: 4,
     title: 'Console-Based Banking System',
+    impact: 'Implemented file-based persistence layer simulating a lightweight database for account transactions.',
     desc: 'Developed a banking application using Java, demonstrating core OOP principles. Manages account creation, transactions, withdrawals, and account balance inquiries via a command-line interface. Data is persistently stored using file handling techniques to simulate a basic database, ensuring efficient and secure operations. Showcases exception handling, class design, and encapsulation in a real-world banking context.',
     tags: ['Java', 'OOP', 'File Handling', 'Console App', 'Exception Handling'],
     color: '#10a37f',
@@ -95,6 +99,12 @@ export default function Projects() {
                 {/* Content below image */}
                 <div className="project-body">
                   <h3 className="project-title">{project.title}</h3>
+                  {project.impact && (
+                    <p className="project-impact">
+                      <span className="project-impact-icon">✦</span>
+                      {project.impact}
+                    </p>
+                  )}
                   <p className="project-desc">{project.desc}</p>
                   <div className="project-tags">
                     {project.tags.map(tag => (
