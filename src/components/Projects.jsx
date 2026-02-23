@@ -7,10 +7,10 @@ import ShinyText from './ShinyText';
 const PROJECTS = [
   {
     id: 1,
-    title: 'Task Manager App in React',
-    impact: 'Implemented real-time state sync with localStorage persistence — zero data loss on refresh.',
-    desc: 'Built a modern, interactive task manager application using React. Includes dynamic task management features — creating, updating, marking as completed, and deleting tasks — all maintained in browser local storage. Demonstrates proficiency in React hooks, state management, and creating a responsive and user-friendly UI.',
-    tags: ['React', 'JavaScript', 'LocalStorage', 'Hooks', 'CSS'],
+    title: 'Ultra-Spaced Task Management App',
+    impact: 'Powered by React 19, Firebase 12, and Vite 7 for real-time Firestore synchronization.',
+    desc: 'A premium, "Ultra Spaced" Task Management Application designed for professional focus and visual excellence. Built with React 19, Vite 7, and Firebase 12, it moves away from cluttered interfaces to provide an airy, high-end "gallery" experience with secure OAuth logins.',
+    tags: ['React 19', 'Vite 7', 'Firebase 12', 'Firestore', 'OAuth', 'Gmail API', 'Framer Motion'],
     color: '#a855f7',
     image: '/projects/task-manager.jpg',
   },
