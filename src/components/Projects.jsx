@@ -13,6 +13,7 @@ const PROJECTS = [
     tags: ['React 19', 'Vite 7', 'Firebase 12', 'Firestore', 'OAuth', 'Gmail API', 'Framer Motion'],
     color: '#a855f7',
     image: '/projects/task-manager.jpg',
+    link: 'https://task-managerj6.vercel.app/',
   },
   {
     id: 2,
@@ -53,7 +54,12 @@ export default function Projects() {
         { rotateY: 0, scale: 1 },
         {
           rotateY: 6, scale: 1.02, duration: 0.2, ease: 'power2.out',
-          onComplete: () => gsap.to(ref, { rotateY: 0, scale: 1, duration: 0.25, ease: 'power2.in' })
+          onComplete: () => {
+            gsap.to(ref, { rotateY: 0, scale: 1, duration: 0.25, ease: 'power2.in' });
+            if (PROJECTS[idx].link) {
+              window.open(PROJECTS[idx].link, '_blank', 'noopener,noreferrer');
+            }
+          }
         }
       );
     }
